@@ -1,0 +1,54 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #1e1e1e;
+    color: #f8f8f2;
+    font-size: 110%;
+    font-family: sans-serif;
+}
+
+main {
+    max-width: 640px;
+    margin: 0px auto;
+}
+
+main > img {
+    width: 100%;
+    height: auto;
+}
+
+a:link {
+    color: #66d9ef;
+}
+
+a:visited {
+    color: #ae81ff;
+}
+
+h1 {
+    color: #a6e22e;
+}
+
+h2 {
+    color: #e6db74;
+}
+
+h3 {
+    color: #fd971f;
+}
+
+h4 {
+    color: #f92672
+}
+
+.c0 {
+    color: #1e1e1e;
+}
+
+.c1 {
+    color: #f8f8f2;
+}
+
+nav {
+    margin-top: 0.5em;
+}
