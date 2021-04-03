@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Decarboxylation Calculator</title>
+        <link rel="icon" type="image/ico" href="/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="/theme.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+window.onload = () => {
+    const cannabinoid = document.querySelector('#cannabinoid');
+    const c = document.querySelector('#c');
+    const ca = document.querySelector('#ca');
+    const g = document.querySelector('#g');
+    const total = document.querySelector('#total');
+    const mg = document.querySelector('#mg');
+    const mg1 = document.querySelector('#mg1');
+    const callback = evt => {
+        console.log('wtf');
+        document.querySelectorAll('.cannabinoid').forEach(x => {
+            x.innerText = cannabinoid.value;
+        });
+        const x = parseFloat(c.value);
+        const xa = parseFloat(ca.value);
+        const t = x + xa * 0.877;
+        const q = parseFloat(g.value);
+        total.innerText = (Math.round(t * 100) / 100);
+        mg.innerText = Math.round(q * t * 10);
+        mg1.innerText = Math.round(t * 10);
+    };
+    cannabinoid.value = 'CBD';
+    c.value = '1.0';
+    ca.value = '10.0';
+    g.value = '1';
+    cannabinoid.onchange = callback;
+    c.oninput = callback;
+    ca.oninput = callback;
+    g.oninput = callback;
+    callback();
+};
+        </script>
+    </head>
+    <body>
+        <main>
+            <nav>
+                <a href="/decarboxylation/">< Back</a>
+            </nav>
+            <h1>Decarboxylation Calculator</h1>
+            <h2>Before Decarb</h2>
+            <table>
+                <tr>
+                    <td>Cannabinoid: </td>
+                    <td>
+                        <select id="cannabinoid">
+                            <option>CBD</option>
+                            <option>CBG</option>
+                            <option>THC</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="cannabinoid"></span>: </td>
+                    <td><input id="c" value="1.0">%</td>
+                </tr>
+                <tr>
+                    <td><span class="cannabinoid"></span>a: </td>
+                    <td><input id="ca" value="10.0">%</td>
+                </tr>
+                <tr>
+                    <td>Quantity: </td>
+                    <td><input id="g" value="1"> gram(s)</td>
+                </tr>
+            </table>
+            <h2>After Decarb</h2>
+            <table>
+                <tr>
+                    <td>Total <span class="cannabinoid"></span>: </td>
+                    <td><span id="total"></span>%</td>
+                </tr>
+                <tr>
+                    <td>Total quantity: </td>
+                    <td><span id="mg"></span>mg <span class="cannabinoid"></span></td>
+                </tr>
+                <tr>
+                    <td>Per gram: </td>
+                    <td><span id="mg1"></span>mg <span class="cannabinoid"></span></td>
+                </tr>
+            </table>
+        </main>
+    </body>
+</html>
