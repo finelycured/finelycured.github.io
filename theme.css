@@ -9,12 +9,20 @@ html, body {
 
 main {
     max-width: 800px;
-    margin: 0px auto;
+    margin: 2em auto;
 }
 
 main > img {
     width: 100%;
     height: auto;
+}
+
+input {
+    width: 4em;
+    padding: 0.25em 0.5em;
+    color: #f8f8f2;
+    background: #282a2e;
+    border: none;
 }
 
 a:link {
@@ -27,7 +35,6 @@ a:visited {
 
 h1 {
     color: #a6e22e;
-    margin-top: 1em;
 }
 
 h2 {
